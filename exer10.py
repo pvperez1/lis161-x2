@@ -1,6 +1,7 @@
 sum = 0
 count = 0
-ave = None
+max = None
+min = None
 
 while True:
     num = input("Enter a number:")
@@ -13,8 +14,10 @@ while True:
         continue
     sum += num
     count += 1
+    if min is None or num < min:
+        min = num
+    if max is None or num > max:
+        max = num
 
-if count == 0:
-    print(sum, count, ave)
-else:
-    print(sum, count, sum/count)
+
+print(sum, count, min, max)
